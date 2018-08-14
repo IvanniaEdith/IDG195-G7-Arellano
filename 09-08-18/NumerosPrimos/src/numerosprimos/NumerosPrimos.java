@@ -16,8 +16,14 @@ public class NumerosPrimos {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println(Nprimo (6));
-    }
+        int lista[] = {4,5,6,9,7};
+        for (int i = 0; i < lista.length; i++) {
+            if(Nprimo(lista[i])){
+                System.out.println("Numero primo:" + lista[i]);
+            }
+        }
+   
+        }
     public static boolean Nprimo (int primo){
         if(primo<2){
           return false;  
