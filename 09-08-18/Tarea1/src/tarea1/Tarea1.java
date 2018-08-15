@@ -16,7 +16,7 @@ public class Tarea1 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-         int lista[] = {4,5,6,9,7};
+        int lista[] = {4,5,6,9,7};
         int suma = sumatory(lista);
         int min = minimo(lista);
         int max = maximo(lista);
