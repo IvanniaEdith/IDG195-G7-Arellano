@@ -1,0 +1,29 @@
+{
+	"alumno":[
+	{
+		"nombre";"Ivannia",
+		"apellido";"Arellano",
+		"matricula";020947,
+		"carrera";"IDGD",
+		"semestre";7,
+		"contraseña";"holamundo"
+	}
+	{
+		"nombre";"Shamira",
+		"apellido";"Macias",
+		"matricula";020946,
+		"carrera";"IDGD",
+		"semestre";7,
+		"contraseña";"hola"
+	}
+	{
+		"nombre";"Andrea",
+		"apellido";"Vazquez",
+		"matricula";020945,
+		"carrera";"IDGD",
+		"semestre";7,
+		"contraseña";"mundo"
+	}
+
+	]
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alumnos>
+	<alumno>
+		<nombre>Ivannia</nombre>
+		<apellido>Arellano</apellido>
+		<matricula>020947</matricula>
+		<carrera>IDGD</carrera>
+		<semestre>7</semestre>
+		<contraseña>holamundo</contraseña>
+	</alumno>
+	<alumno>
+		<nombre>Ivannia</nombre>
+		<apellido>Arellano</apellido>
+		<matricula>020947</matricula>
+		<carrera>IDGD</carrera>
+		<semestre>7</semestre>
+		<contraseña>holamundo</contraseña>
+	</alumno>
+	<alumno>
+		<nombre>Ivannia</nombre>
+		<apellido>Arellano</apellido>
+		<matricula>020947</matricula>
+		<carrera>IDGD</carrera>
+		<semestre>7</semestre>
+		<contraseña>holamundo</contraseña>
+	</alumno>
+</alumnos>
