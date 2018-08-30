@@ -1,5 +1,6 @@
 package mx.edu.cetys.arellano.ivannia.myapplicationsegundointento;
 
+import android.app.DownloadManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,11 +11,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
@@ -72,6 +76,41 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void volleyRequest2(){
+        RequestQueue queue = Volley.newRequestQueue(this);
+        String url ="http://138.68.231.116:5000/perfil";
+
+// Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest (DownloadManager.Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        List<ClassPerfil> miPerfil = Arrays.asList(gson.fromJson(response, ClassPerfil[].class));
+                        for (ClassPerfil perfil: miPerfil) {
+                            if (perfil.getUsername().trim().toLowerCase().equals("t021204")){
+                                Toast.makeText(getApplicationContext(),
+                                        perfil.toString(),
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(
+                        getApplicationContext(),
+                        error.getMessage(),
+                        Toast.LENGTH_SHORT
+                ).show();
+            }
+
+        });
+
+// Add the request to the RequestQueue.
+        queue.add(stringRequest);
     }
 
     @Override
