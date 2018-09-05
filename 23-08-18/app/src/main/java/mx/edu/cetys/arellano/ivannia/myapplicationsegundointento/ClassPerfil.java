@@ -6,9 +6,9 @@ public class ClassPerfil {
 
     @SerializedName("id")
     private String id;
-    @SerializedName("username")
+    @SerializedName("matricula")
     private String username;
-    @SerializedName("password")
+    @SerializedName("contrasena")
     private String password;
     @SerializedName("Nombre")
     private String nombre;

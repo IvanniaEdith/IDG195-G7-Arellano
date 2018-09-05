@@ -13,6 +13,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.google.gson.Gson;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,6 +30,7 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity {
+    private Gson gson;
     private EditText Telefono;
     private EditText Direccion;
     private EditText Nombre;
@@ -77,19 +86,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    
     public void volleyRequest2(){
         RequestQueue queue = Volley.newRequestQueue(this);
         String url ="http://138.68.231.116:5000/perfil";
 
 // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest (DownloadManager.Request.Method.GET, url,
+        StringRequest stringRequest = new StringRequest (Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+
                         List<ClassPerfil> miPerfil = Arrays.asList(gson.fromJson(response, ClassPerfil[].class));
+                        ClassPerfil miClassPerfil = findClassPerfil(misClassPerfil, matricula, contrase);
                         for (ClassPerfil perfil: miPerfil) {
-                            if (perfil.getUsername().trim().toLowerCase().equals("t021204")){
+                            if (perfil.getUsername().trim().toLowerCase().equals("t020947")){
                                 Toast.makeText(getApplicationContext(),
                                         perfil.toString(),
                                         Toast.LENGTH_LONG).show();
@@ -112,13 +123,21 @@ public class MainActivity extends AppCompatActivity {
 // Add the request to the RequestQueue.
         queue.add(stringRequest);
     }
-
+    private ClassPerfil findClassPerfil(List<ClassPerfil> classPerfil, String matricula, String contraseña){
+        for(ClassPerfil classPerfil: classPerfil){
+            if(classPerfil.getNombre().equals(matricula) && classPerfil.getId().equals(contraseña)){
+                return classPerfil;
+            }
+        }
+        return null;
+    }
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-
+    
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
