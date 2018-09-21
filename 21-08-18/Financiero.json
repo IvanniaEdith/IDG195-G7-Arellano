@@ -1,0 +1,60 @@
+{"financiero":[
+
+		{
+		"TipoPago":"6 semanas",
+		"Beca":60,
+	"adeudo":[
+		{
+		"servicio":"Credencial de estudiante",
+		"costo":120,
+		"FechaPago":"21/08/18"
+		},
+		{
+		"servicio":"Credencial de estudiante",
+		"costo":100,
+		"FechaPago":"21/08/18"
+		}
+		],
+ 	"historialFinanciero":[
+		{
+		"servicioPagado":"Credencial de estudiante",
+		"importe":120,
+		"FechaPago":"21/08/18",
+		"carrera":"IDGD"
+		}
+		],
+	"tramites":[
+		{
+		"tipoTramite":"Credenciales",
+		"costo":120,
+		"FechaPago":"21/08/18"
+		},
+		{
+		"tipoTramite":"Cambio de Carrera",
+		"costo":800,
+		"FechaPago":"21/08/18"
+		}	
+		{
+		"tipoTramite":"Carta Servicio Medico",
+		"costo":60,
+		"FechaPago":"21/08/18"
+		}
+		{
+		"tipoTramite":"Constancia",
+		"costo":60,
+		"FechaPago":"21/08/18"
+		}
+		{
+		"tipoTramite":"Carta de Calificaciones",
+		"costo":60,
+		"FechaPago":"21/08/18"
+		}			
+		{
+		"tipoTramite":"Constancia Ingles",
+		"costo":120,
+		"FechaPago":"21/08/18"
+		}		
+		]
+}
+	]
+}
